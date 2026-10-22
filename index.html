@@ -1,449 +1,1735 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Espaço Cuidar | Regiane Barbosa - Fisioterapia e Estética Integrativa</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Espaço Cuidar | Dra. Regiane Barbosa - Fisioterapia & Estética Avançada</title>
   
-  <!-- Fontes Google de Alto Padrão -->
+  <!-- Fontes de Alta Costura & Tipografia Moderna -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
+    /* ==========================================================
+       VARIÁVEIS DE DESIGN SYSTEM & PALETA LUXO
+       ========================================================== */
     :root {
       --bg-cream: #FAF7F2;
       --bg-surface: #FFFFFF;
-      --bg-subtle: #F5EFE6;
-      --rose-brown: #7E4D45;
-      --rose-brown-dark: #58332E;
-      --rose-brown-light: #9C6860;
-      --rose-subtle: #F3EAE7;
-      --gold: #C5A059;
-      --gold-dark: #9F7E3B;
-      --gold-light: #F4E8D0;
-      --text-main: #2D2524;
-      --text-muted: #6E615E;
-      --border-color: #EBDED6;
-      --shadow-soft: 0 10px 30px rgba(126, 77, 69, 0.08);
-      --shadow-hover: 0 15px 35px rgba(126, 77, 69, 0.15);
+      --bg-card: #FFFFFF;
+      --bg-soft-rose: #F6EDE8;
+      --bg-champagne: #F4EFEB;
+      
+      --gold-primary: #C5A059;
+      --gold-dark: #A47F3B;
+      --gold-light: #E8D3A7;
+      --gold-gradient: linear-gradient(135deg, #DFBA73 0%, #C5A059 50%, #9F7932 100%);
+      
+      --rose-accent: #C88D7E;
+      --rose-light: #F2DDD6;
+      
+      --text-dark: #27211E;
+      --text-muted: #7A6F69;
+      --text-light: #A49B95;
+      
+      --border-delicate: #EBDED5;
+      --border-gold: rgba(197, 160, 89, 0.35);
+      
+      --shadow-subtle: 0 4px 20px rgba(71, 48, 36, 0.05);
+      --shadow-premium: 0 15px 40px rgba(119, 87, 65, 0.09);
+      --shadow-floating: 0 20px 50px rgba(197, 160, 89, 0.22);
+      
       --radius-sm: 8px;
-      --radius-md: 14px;
+      --radius-md: 16px;
       --radius-lg: 24px;
-      --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      --radius-full: 9999px;
+      
+      --transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-family: 'Montserrat', sans-serif;
       background-color: var(--bg-cream);
-      color: var(--text-main);
+      color: var(--text-dark);
       line-height: 1.6;
       overflow-x: hidden;
     }
 
     h1, h2, h3, h4, .serif-font {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      letter-spacing: 0.02em;
+      font-weight: 600;
     }
 
-    a { text-decoration: none; color: inherit; }
-    button { font-family: inherit; cursor: pointer; border: none; outline: none; }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button, input, select, textarea {
+      font-family: inherit;
+    }
 
     .container {
       width: 100%;
-      max-width: 1200px;
+      max-width: 1240px;
       margin: 0 auto;
       padding: 0 24px;
     }
 
-    /* HEADER */
-    .header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background-color: rgba(250, 247, 242, 0.95);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--border-color);
-    }
-
-    .header-inner {
-      display: flex;
+    /* BADGE & BOTÕES GERAIS */
+    .badge {
+      display: inline-flex;
       align-items: center;
-      justify-content: space-between;
-      height: 80px;
-    }
-
-    .logo-title {
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: var(--rose-brown);
-    }
-
-    .logo-subtitle {
-      font-size: 0.75rem;
-      letter-spacing: 0.12em;
+      gap: 8px;
+      padding: 6px 16px;
+      background: var(--bg-soft-rose);
+      color: var(--rose-accent);
+      border-radius: var(--radius-full);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--gold-dark);
+      border: 1px solid var(--border-delicate);
     }
-
-    .nav-links { display: flex; gap: 24px; }
-    .nav-link { font-size: 0.95rem; font-weight: 500; color: var(--text-muted); }
-    .nav-link:hover { color: var(--rose-brown); }
 
     .btn {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      padding: 10px 20px;
-      font-size: 0.9rem;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 28px;
+      font-size: 0.88rem;
       font-weight: 600;
-      border-radius: 50px;
+      letter-spacing: 0.06em;
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      transition: var(--transition);
+      border: none;
+      text-transform: uppercase;
+    }
+
+    .btn-gold {
+      background: var(--gold-gradient);
+      color: #FFFFFF;
+      box-shadow: 0 8px 24px rgba(197, 160, 89, 0.35);
+    }
+
+    .btn-gold:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(197, 160, 89, 0.48);
+    }
+
+    .btn-outline-gold {
+      background: transparent;
+      color: var(--gold-dark);
+      border: 1px solid var(--gold-primary);
+    }
+
+    .btn-outline-gold:hover {
+      background: var(--gold-primary);
+      color: #FFFFFF;
+      transform: translateY(-2px);
+    }
+
+    /* ==========================================================
+       HEADER FIXO E LUXUOSO
+       ========================================================== */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(250, 247, 242, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(235, 222, 213, 0.7);
       transition: var(--transition);
     }
 
-    .btn-primary { background-color: var(--rose-brown); color: #FFF; }
-    .btn-primary:hover { background-color: var(--rose-brown-dark); }
-    .btn-gold { background: linear-gradient(135deg, var(--gold), var(--gold-dark)); color: #FFF; }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 84px;
+    }
 
-    .btn-admin-link {
-      background: transparent;
-      font-size: 0.8rem;
+    .brand {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-title {
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      line-height: 1;
+    }
+
+    .brand-title span {
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .brand-subtitle {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
       color: var(--text-muted);
-      padding: 6px 12px;
-      border-radius: var(--radius-sm);
-      border: 1px dashed var(--border-color);
+      margin-top: 3px;
     }
 
-    /* HERO */
-    .hero { padding: 70px 0; }
-    .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
-    .hero-title { font-size: 3.2rem; color: var(--rose-brown-dark); line-height: 1.1; margin-bottom: 20px; }
-    .hero-title span { color: var(--gold-dark); font-style: italic; }
-    .hero-subtitle { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 30px; }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
 
-    .hero-card-preview {
-      background: #FFF;
+    .nav-links a {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-dark);
+      transition: var(--transition);
+      letter-spacing: 0.04em;
+      position: relative;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold-primary);
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: var(--gold-gradient);
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .btn-admin-icon {
+      background: rgba(197, 160, 89, 0.12);
+      color: var(--gold-dark);
+      border: 1px solid var(--border-gold);
+      padding: 9px 15px;
+      border-radius: var(--radius-full);
+      font-size: 0.75rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .btn-admin-icon:hover {
+      background: var(--gold-primary);
+      color: #fff;
+    }
+
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1.6rem;
+      color: var(--text-dark);
+    }
+
+    /* ==========================================================
+       HERO SECTION
+       ========================================================== */
+    .hero {
+      padding: 160px 0 100px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-glow {
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(216, 159, 139, 0.18) 0%, rgba(250, 247, 242, 0) 70%);
+      top: 10%;
+      right: 5%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: center;
+      gap: 60px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-content h1 {
+      font-size: 3.4rem;
+      line-height: 1.12;
+      margin: 18px 0;
+      color: var(--text-dark);
+    }
+
+    .hero-content h1 em {
+      font-style: italic;
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-desc {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      margin-bottom: 34px;
+      max-width: 540px;
+      font-weight: 300;
+    }
+
+    .hero-btns {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .hero-metrics {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      margin-top: 48px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border-delicate);
+    }
+
+    .metric-item h4 {
+      font-size: 2rem;
+      color: var(--gold-primary);
+      line-height: 1;
+    }
+
+    .metric-item p {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      margin-top: 5px;
+    }
+
+    /* CARD HERO AVATAR */
+    .hero-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    .avatar-card {
+      position: relative;
+      width: 100%;
+      max-width: 420px;
       border-radius: var(--radius-lg);
-      padding: 30px;
-      box-shadow: var(--shadow-soft);
-      border: 1px solid var(--border-color);
+      padding: 16px;
+      background: linear-gradient(145deg, #FFFFFF, var(--bg-champagne));
+      box-shadow: var(--shadow-premium);
+      border: 1px solid var(--border-gold);
     }
 
-    /* DESTAQUE & SERVIÇOS */
-    .special-section { padding: 80px 0; background: #FFF; }
-    .section-title { font-size: 2.5rem; color: var(--rose-brown-dark); text-align: center; margin-bottom: 40px; }
+    .avatar-wrapper {
+      width: 100%;
+      height: 480px;
+      border-radius: calc(var(--radius-lg) - 8px);
+      overflow: hidden;
+      background: #E8D3A7;
+      position: relative;
+    }
 
-    .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+    .avatar-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(1.05);
+      transition: var(--transition);
+    }
+
+    .avatar-card:hover .avatar-img {
+      transform: scale(1.03);
+    }
+
+    .floating-card-badge {
+      position: absolute;
+      bottom: -20px;
+      left: -20px;
+      background: #FFFFFF;
+      padding: 16px 22px;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-floating);
+      border-left: 4px solid var(--gold-primary);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .fc-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--bg-soft-rose);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--rose-accent);
+      font-size: 1.2rem;
+    }
+
+    .fc-text h5 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+
+    .fc-text p {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+    }
+
+    /* ==========================================================
+       SEÇÃO ESPECIAL: HIDRATAÇÃO INJETÁVEL
+       ========================================================== */
+    .section-special {
+      padding: 100px 0;
+      background: linear-gradient(180deg, var(--bg-cream) 0%, var(--bg-champagne) 100%);
+      position: relative;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 60px;
+    }
+
+    .section-header h2 {
+      font-size: 2.8rem;
+      color: var(--text-dark);
+      margin: 12px 0;
+    }
+
+    .section-header p {
+      font-size: 0.98rem;
+      color: var(--text-muted);
+    }
+
+    .special-spotlight {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+      background: #FFFFFF;
+      border-radius: var(--radius-lg);
+      padding: 48px;
+      border: 1px solid var(--border-gold);
+      box-shadow: var(--shadow-premium);
+      margin-bottom: 40px;
+    }
+
+    .spotlight-info h3 {
+      font-size: 2.3rem;
+      margin-bottom: 14px;
+      color: var(--text-dark);
+    }
+
+    .spotlight-info h3 span {
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .spotlight-info p {
+      color: var(--text-muted);
+      margin-bottom: 24px;
+      font-size: 0.95rem;
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
     .benefit-card {
+      background: #FFFFFF;
+      padding: 32px 24px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-delicate);
+      box-shadow: var(--shadow-subtle);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .benefit-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--gold-gradient);
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .benefit-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-premium);
+      border-color: var(--border-gold);
+    }
+
+    .benefit-card:hover::before {
+      opacity: 1;
+    }
+
+    .b-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      background: var(--bg-soft-rose);
+      color: var(--rose-accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 18px;
+    }
+
+    .benefit-card h4 {
+      font-size: 1.35rem;
+      margin-bottom: 10px;
+      color: var(--text-dark);
+    }
+
+    .benefit-card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    /* ==========================================================
+       CATÁLOGO DE SERVIÇOS COM FILTRO
+       ========================================================== */
+    .section-services {
+      padding: 100px 0;
       background: var(--bg-cream);
-      padding: 20px;
-      border-radius: var(--radius-md);
-      border: 1px solid var(--border-color);
     }
 
-    .services-section { padding: 80px 0; }
-    .services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; }
+    .filter-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 48px;
+      flex-wrap: wrap;
+    }
+
+    .tab-btn {
+      padding: 12px 26px;
+      border-radius: var(--radius-full);
+      background: #FFFFFF;
+      border: 1px solid var(--border-delicate);
+      color: var(--text-muted);
+      font-size: 0.84rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .tab-btn.active, .tab-btn:hover {
+      background: var(--gold-gradient);
+      color: #FFFFFF;
+      border-color: transparent;
+      box-shadow: 0 4px 16px rgba(197, 160, 89, 0.3);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 30px;
+    }
+
     .service-card {
-      background: #FFF;
-      border: 1px solid var(--border-color);
+      background: #FFFFFF;
       border-radius: var(--radius-md);
+      padding: 32px;
+      border: 1px solid var(--border-delicate);
+      box-shadow: var(--shadow-subtle);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-premium);
+      border-color: var(--border-gold);
+    }
+
+    .service-category-tag {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--gold-dark);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .service-card h3 {
+      font-size: 1.6rem;
+      color: var(--text-dark);
+      margin-bottom: 12px;
+    }
+
+    .service-card p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+
+    .service-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--border-delicate);
+      padding-top: 20px;
+    }
+
+    .service-time {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .btn-select-proc {
+      background: none;
+      border: none;
+      color: var(--gold-primary);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: var(--transition);
+      text-transform: uppercase;
+    }
+
+    .btn-select-proc:hover {
+      color: var(--gold-dark);
+      transform: translateX(4px);
+    }
+
+    /* ==========================================================
+       SIMULADOR & AGENDADOR INTERATIVO (WHATSAPP)
+       ========================================================== */
+    .section-scheduler {
+      padding: 100px 0;
+      background: linear-gradient(135deg, #FAF7F2 0%, #F5ECE5 100%);
+    }
+
+    .scheduler-box {
+      background: #FFFFFF;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-premium);
+      border: 1px solid var(--border-gold);
+      padding: 50px;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .scheduler-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 30px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .form-group.full-width {
+      grid-column: span 2;
+    }
+
+    .form-group label {
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      color: var(--text-dark);
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 14px 18px;
+      background: var(--bg-cream);
+      border: 1px solid var(--border-delicate);
+      border-radius: var(--radius-sm);
+      font-size: 0.92rem;
+      color: var(--text-dark);
+      outline: none;
+      transition: var(--transition);
+    }
+
+    .form-control:focus {
+      border-color: var(--gold-primary);
+      background: #FFFFFF;
+      box-shadow: 0 0 0 3px rgba(197, 160, 89, 0.15);
+    }
+
+    .radio-shifts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .shift-label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px;
+      border: 1px solid var(--border-delicate);
+      background: var(--bg-cream);
+      border-radius: var(--radius-sm);
+      font-size: 0.86rem;
+      cursor: pointer;
+      font-weight: 500;
+      transition: var(--transition);
+    }
+
+    .shift-label:has(input:checked) {
+      background: var(--bg-soft-rose);
+      border-color: var(--rose-accent);
+      color: var(--rose-accent);
+      font-weight: 600;
+    }
+
+    .shift-label input {
+      display: none;
+    }
+
+    /* ==========================================================
+       LOCALIZAÇÃO & CONTATO
+       ========================================================== */
+    .section-contact {
+      padding: 90px 0;
+      background: #FFFFFF;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 50px;
+    }
+
+    .contact-card {
+      background: var(--bg-cream);
+      padding: 40px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-delicate);
+    }
+
+    .contact-items {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      margin-top: 28px;
+    }
+
+    .c-item {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+    }
+
+    .c-icon {
+      width: 48px;
+      height: 48px;
+      background: #FFFFFF;
+      border-radius: 12px;
+      border: 1px solid var(--border-gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold-dark);
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+
+    .c-text h4 {
+      font-size: 1.15rem;
+      margin-bottom: 4px;
+      color: var(--text-dark);
+    }
+
+    .c-text p, .c-text a {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .map-frame-box {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--border-delicate);
+      box-shadow: var(--shadow-premium);
+      min-height: 380px;
+      background: #E8D3A7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .map-placeholder-inner {
+      text-align: center;
+      padding: 40px;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-subtle);
+      max-width: 380px;
+      border: 1px solid var(--border-gold);
+    }
+
+    /* ==========================================================
+       RODAPÉ
+       ========================================================== */
+    .footer {
+      background: var(--text-dark);
+      color: #FFFFFF;
+      padding: 60px 0 30px;
+      border-top: 1px solid rgba(197, 160, 89, 0.2);
+    }
+
+    .footer-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 30px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .footer-brand h3 {
+      font-size: 1.8rem;
+      letter-spacing: 0.03em;
+    }
+
+    .footer-brand h3 span {
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .footer-brand p {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.5);
+      margin-top: 4px;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.4);
+      margin-top: 30px;
+    }
+
+    /* ==========================================================
+       BOTÃO FLUTUANTE DO WHATSAPP COM ANIMAÇÃO
+       ========================================================== */
+    .floating-whatsapp {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      background: #25D366;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFFFFF;
+      box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45);
+      z-index: 999;
+      cursor: pointer;
+      transition: var(--transition);
+      animation: pulseWhatsApp 2.2s infinite;
+    }
+
+    .floating-whatsapp:hover {
+      transform: scale(1.1);
+      background: #20BA5A;
+    }
+
+    .floating-whatsapp svg {
+      width: 32px;
+      height: 32px;
+      fill: currentColor;
+    }
+
+    @keyframes pulseWhatsApp {
+      0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
+      }
+      70% {
+        box-shadow: 0 0 0 16px rgba(37, 211, 102, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+      }
+    }
+
+    /* ==========================================================
+       MODAL DE FLUXO DE CAIXA (MÓDULO ADMINISTRATIVO)
+       ========================================================== */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(39, 33, 30, 0.75);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      justify-content: center;
       padding: 20px;
     }
 
-    .service-title { font-size: 1.3rem; color: var(--rose-brown-dark); margin-bottom: 8px; }
-    .service-desc { font-size: 0.88rem; color: var(--text-muted); }
-
-    /* FOOTER */
-    .footer { background-color: var(--rose-brown-dark); color: #FFF; padding: 50px 0 20px; margin-top: 60px; }
-    .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 40px; }
-
-    /* MODAL ADMIN */
-    .admin-modal-overlay {
-      position: fixed; inset: 0; background: rgba(0,0,0,0.6);
-      z-index: 1000; display: none; align-items: center; justify-content: center; padding: 20px;
-    }
-    .admin-modal-overlay.active { display: flex; }
-    .admin-modal {
-      background: #FFF; width: 100%; max-width: 900px; max-height: 85vh;
-      border-radius: var(--radius-lg); overflow: hidden; display: flex; flex-direction: column;
-    }
-    .admin-header { padding: 20px; background: var(--rose-subtle); display: flex; justify-content: space-between; align-items: center; }
-    .admin-body { padding: 20px; overflow-y: auto; }
-    .stat-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 20px; }
-    .stat-card { background: var(--bg-cream); padding: 15px; border-radius: 10px; border: 1px solid var(--border-color); }
-    .stat-card h5 { font-size: 0.85rem; color: var(--text-muted); }
-    .stat-card p { font-size: 1.4rem; font-weight: 700; color: var(--rose-brown); }
-
-    .form-group { margin-bottom: 15px; }
-    .form-group label { display: block; font-size: 0.85rem; margin-bottom: 5px; }
-    .form-group input, .form-group select {
-      width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: 6px;
+    .modal-overlay.active {
+      display: flex;
     }
 
-    table { width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 0.88rem; }
-    th, td { padding: 10px; border-bottom: 1px solid var(--border-color); text-align: left; }
-    th { background: var(--bg-subtle); }
+    .modal-window {
+      background: #FFFFFF;
+      width: 100%;
+      max-width: 980px;
+      max-height: 90vh;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-gold);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      animation: modalSlide 0.35s ease-out;
+    }
 
-    .floating-whatsapp {
-      position: fixed; bottom: 24px; right: 24px; width: 56px; height: 56px;
-      border-radius: 50%; background: #25D366; color: #FFF; display: flex;
-      align-items: center; justify-content: center; font-size: 1.8rem;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2); z-index: 99;
+    @keyframes modalSlide {
+      from {
+        opacity: 0;
+        transform: translateY(24px) scale(0.98);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .modal-header {
+      padding: 22px 30px;
+      border-bottom: 1px solid var(--border-delicate);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--bg-cream);
+    }
+
+    .modal-header h3 {
+      font-size: 1.6rem;
+      color: var(--text-dark);
+    }
+
+    .btn-close-modal {
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--text-muted);
+      transition: var(--transition);
+      line-height: 1;
+    }
+
+    .btn-close-modal:hover {
+      color: var(--rose-accent);
+      transform: scale(1.1);
+    }
+
+    .modal-body {
+      padding: 30px;
+      overflow-y: auto;
+    }
+
+    /* CARDS DE RESUMO FINANCEIRO */
+    .finance-kpis {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-bottom: 28px;
+    }
+
+    .kpi-card {
+      padding: 20px;
+      border-radius: var(--radius-md);
+      background: var(--bg-cream);
+      border: 1px solid var(--border-delicate);
+      position: relative;
+    }
+
+    .kpi-card.income {
+      border-left: 4px solid #28A745;
+    }
+
+    .kpi-card.expense {
+      border-left: 4px solid #DC3545;
+    }
+
+    .kpi-card.balance {
+      border-left: 4px solid var(--gold-primary);
+    }
+
+    .kpi-title {
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+    }
+
+    .kpi-value {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-top: 6px;
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    .kpi-card.income .kpi-value { color: #28A745; }
+    .kpi-card.expense .kpi-value { color: #DC3545; }
+    .kpi-card.balance .kpi-value { color: var(--gold-dark); }
+
+    /* FORMULÁRIO DE LANÇAMENTO */
+    .transaction-form {
+      background: var(--bg-champagne);
+      padding: 22px;
+      border-radius: var(--radius-md);
+      margin-bottom: 28px;
+      border: 1px solid var(--border-delicate);
+    }
+
+    .transaction-form h4 {
+      font-size: 1.25rem;
+      margin-bottom: 14px;
+      color: var(--text-dark);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 2fr 1.2fr 1.2fr 1fr auto;
+      gap: 12px;
+      align-items: flex-end;
+    }
+
+    /* TABELA FINANCEIRA */
+    .ledger-container {
+      border: 1px solid var(--border-delicate);
+      border-radius: var(--radius-md);
+      overflow-x: auto;
+    }
+
+    .ledger-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.85rem;
+    }
+
+    .ledger-table th {
+      background: var(--bg-cream);
+      padding: 12px 16px;
+      color: var(--text-dark);
+      font-weight: 600;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid var(--border-delicate);
+    }
+
+    .ledger-table td {
+      padding: 13px 16px;
+      border-bottom: 1px solid var(--border-delicate);
+      color: var(--text-dark);
+    }
+
+    .badge-type {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: var(--radius-full);
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .badge-in {
+      background: #D4EDDA;
+      color: #155724;
+    }
+
+    .badge-out {
+      background: #F8D7DA;
+      color: #721C24;
+    }
+
+    .btn-delete-item {
+      background: none;
+      border: none;
+      color: #DC3545;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: var(--transition);
+      opacity: 0.65;
+    }
+
+    .btn-delete-item:hover {
+      opacity: 1;
+      transform: scale(1.15);
+    }
+
+    /* RESPONSIVIDADE */
+    @media (max-width: 992px) {
+      .hero-grid, .spotlight-info, .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      .special-spotlight {
+        grid-template-columns: 1fr;
+      }
+      .benefits-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-content h1 {
+        font-size: 2.7rem;
+      }
+      .form-row {
+        grid-template-columns: 1fr 1fr;
+      }
+      .finance-kpis {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width: 768px) {
-      .hero-grid, .footer-grid { grid-template-columns: 1fr; }
-      .hero-title { font-size: 2.3rem; }
-      .nav-links { display: none; }
-      .stat-cards { grid-template-columns: 1fr; }
+      .nav-links {
+        display: none;
+      }
+      .mobile-toggle {
+        display: block;
+      }
+      .scheduler-form {
+        grid-template-columns: 1fr;
+      }
+      .form-group.full-width {
+        grid-column: span 1;
+      }
+      .scheduler-box {
+        padding: 28px 20px;
+      }
+      .hero {
+        padding: 120px 0 60px;
+      }
+      .form-row {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- HEADER -->
+  <!-- ==========================================================
+       HEADER FIXO COM NAVEGAÇÃO SUAVE
+       ========================================================== -->
   <header class="header">
-    <div class="container header-inner">
-      <div class="logo-container">
-        <span class="logo-title">Espaço Cuidar</span>
-        <span class="logo-subtitle">Regiane Barbosa • Fisioterapeuta</span>
-      </div>
-      <nav class="nav-links">
-        <a href="#especial" class="nav-link">Hidratação Injetável</a>
-        <a href="#servicos" class="nav-link">Serviços</a>
-        <a href="#localizacao" class="nav-link">Localização</a>
-      </nav>
-      <div class="header-actions">
-        <button class="btn-admin-link" onclick="toggleAdminModal()">⚙️ Gestão / Caixa</button>
-        <a href="https://wa.me/5596974003963?text=Olá,%20gostaria%20de%20agendar%20uma%20avaliação!" target="_blank" class="btn btn-gold">Agendar Avaliação</a>
+    <div class="container">
+      <div class="nav-inner">
+        <a href="#hero" class="brand">
+          <span class="brand-title">Espaço <span>Cuidar</span></span>
+          <span class="brand-subtitle">Dra. Regiane Barbosa • Fisioterapeuta</span>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="#hidratacao">Hidratação Injetável</a></li>
+          <li><a href="#servicos">Procedimentos</a></li>
+          <li><a href="#agendamento">Agendar</a></li>
+          <li><a href="#contato">Localização</a></li>
+        </ul>
+
+        <div class="header-actions">
+          <button class="btn-admin-icon" id="openAdminModalBtn" title="Painel de Fluxo de Caixa">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="3"></circle>
+              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+            </svg>
+            Painel Gestão
+          </button>
+          <a href="#agendamento" class="btn btn-gold" style="padding: 10px 22px; font-size: 0.78rem;">Agendar Consulta</a>
+        </div>
       </div>
     </div>
   </header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="container hero-grid">
-      <div>
-        <h1 class="hero-title">Cuidar de você é a nossa <span>maior especialidade!</span></h1>
-        <p class="hero-subtitle">Saúde, Estética Integrativa e Bem-Estar com atendimento personalizado em Macapá.</p>
-        <a href="https://wa.me/5596974003963?text=Olá,%20quero%20saber%20mais%20sobre%20os%20procedimentos!" target="_blank" class="btn btn-primary">Falar no WhatsApp</a>
-      </div>
-      <div class="hero-card-preview">
-        <h3>Regiane Barbosa</h3>
-        <p style="color: var(--text-muted); margin-bottom: 15px;">Fisioterapeuta & Especialista em Estética</p>
-        <p>✨ Atendimento acolhedor e focado na sua saúde e autoestima.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- DESTAQUE ESPECIAL -->
-  <section id="especial" class="special-section">
+  <!-- ==========================================================
+       HERO SECTION
+       ========================================================== -->
+  <section class="hero" id="hero">
+    <div class="hero-glow"></div>
     <div class="container">
-      <h2 class="section-title">Hidratação Injetável</h2>
-      <p style="text-align:center; margin-bottom: 30px; color: var(--text-muted);">Revitalize sua pele de dentro para fora com resultados visíveis!</p>
-      <div class="feature-grid">
-        <div class="benefit-card">
-          <h4>💧 Hidratação Profunda</h4>
-          <p>Restaura a umidade natural das camadas mais profundas da pele.</p>
+      <div class="hero-grid">
+        <div class="hero-content">
+          <span class="badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            Excelência Clínica em Macapá
+          </span>
+          <h1>A fusão sublime entre <em>fisioterapia</em> e estética de alta performance.</h1>
+          <p class="hero-desc">
+            No Espaço Cuidar, a Dra. Regiane Barbosa une a ciência da reabilitação física às técnicas mais refinadas de estética facial e corporal para realçar a sua beleza natural e devolver a sua vitalidade.
+          </p>
+          <div class="hero-btns">
+            <a href="#agendamento" class="btn btn-gold">
+              Agendar Avaliação
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+            <a href="#servicos" class="btn btn-outline-gold">Ver Procedimentos</a>
+          </div>
+
+          <div class="hero-metrics">
+            <div class="metric-item">
+              <h4>+2.500</h4>
+              <p>Atendimentos Realizados</p>
+            </div>
+            <div class="metric-item">
+              <h4>100%</h4>
+              <p>Protocolos Exclusivos</p>
+            </div>
+            <div class="metric-item">
+              <h4>Macapá</h4>
+              <p>Bairro Universidade</p>
+            </div>
+          </div>
         </div>
-        <div class="benefit-card">
-          <h4>✨ Mais Viço & Brilho</h4>
-          <p>Proporciona luminosidade e aspecto renovado para a face e colo.</p>
-        </div>
-        <div class="benefit-card">
-          <h4>🌿 Elasticidade</h4>
-          <p>Estimula a firmeza e melhora o tônus da pele.</p>
-        </div>
-        <div class="benefit-card">
-          <h4>🛡️ Prevenção</h4>
-          <p>Auxilia na prevenção e amenização do envelhecimento precoce.</p>
+
+        <div class="hero-visual">
+          <div class="avatar-card">
+            <div class="avatar-wrapper">
+              <img src="https://images.unsplash.com/photo-1594824813593-6b3a24683058?auto=format&fit=crop&w=800&q=80" alt="Dra. Regiane Barbosa - Fisioterapeuta" class="avatar-img">
+            </div>
+            <div class="floating-card-badge">
+              <div class="fc-icon">✨</div>
+              <div class="fc-text">
+                <h5>Dra. Regiane Barbosa</h5>
+                <p>Fisioterapeuta & Especialista em Estética</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
-    <!-- SERVIÇOS -->
-  <section id="servicos" class="services-section">
+
+  <!-- ==========================================================
+       DESTAQUE ESPECIAL: HIDRATAÇÃO INJETÁVEL (SKINBOOSTER)
+       ========================================================== -->
+  <section class="section-special" id="hidratacao">
     <div class="container">
-      <h2 class="section-title">Nossos Serviços</h2>
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-title">Fisioterapia Respiratória</div>
-          <div class="service-desc">Atendimento especializado para adultos e crianças.</div>
+      <div class="section-header">
+        <span class="badge">Destaque Exclusivo</span>
+        <h2>Hidratação Injetável</h2>
+        <p>A tecnologia mais sofisticada do mercado para devolver viço, densidade celular e luminosidade à sua pele de dentro para fora.</p>
+      </div>
+
+      <div class="special-spotlight">
+        <div class="spotlight-info">
+          <h3>O segredo do viço profundo com <span>Ácido Hialurônico</span></h3>
+          <p>
+            Diferente dos cremes tópicos que atuam apenas na camada superficial, a <strong>Hidratação Injetável</strong> atinge a derme média, promovendo um reservatório biológico de água. O resultado é um rejuvenescimento autêntico, devolvendo a elasticidade e um brilho perolado único.
+          </p>
+          <a href="#agendamento" onclick="preencherProcedimento('Hidratação Injetável')" class="btn btn-gold">Experimentar Tratamento</a>
         </div>
-        <div class="service-card">
-          <div class="service-title">Limpeza de Pele Personalizada</div>
-          <div class="service-desc">Remoção profunda de impurezas com protocolos específicos.</div>
+        <div>
+          <img src="https://images.unsplash.com/photo-1512290900672-1f02e604f378?auto=format&fit=crop&w=800&q=80" alt="Procedimento de Hidratação Injetável" style="width: 100%; border-radius: var(--radius-md); box-shadow: var(--shadow-subtle);">
         </div>
-        <div class="service-card">
-          <div class="service-title">Toxina Botulínica (Botox)</div>
-          <div class="service-desc">Prevenção e suavização de linhas de expressão.</div>
+      </div>
+
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="b-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>
+          </div>
+          <h4>Luminosidade & Viço</h4>
+          <p>Devolve imediatamente a radiância natural da pele, atenuando o aspecto cansado e sem vida com brilho acetinado.</p>
         </div>
-        <div class="service-card">
-          <div class="service-title">Microagulhamento Facial</div>
-          <div class="service-desc">Estímulo potente de colágeno e rejuvenescimento.</div>
+
+        <div class="benefit-card">
+          <div class="b-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          </div>
+          <h4>Bioestímulo Dérmico</h4>
+          <p>Age ativando as células de suporte, estimulando novas fibras elásticas e combatendo o afinamento precoce.</p>
         </div>
-        <div class="service-card">
-          <div class="service-title">Massagem Relaxante / Pedras Quentes</div>
-          <div class="service-desc">Alívio de tensões, estresse e dores musculares.</div>
-        </div>
-        <div class="service-card">
-          <div class="service-title">Ventosaterapia & Dry Needling</div>
-          <div class="service-desc">Tratamento de pontos de gatilho e melhora da circulação.</div>
-        </div>
-        <div class="service-card">
-          <div class="service-title">Drenagem Linfática & Detox</div>
-          <div class="service-desc">Redução de inchaços, retenção de líquidos e toxinas.</div>
-        </div>
-        <div class="service-card">
-          <div class="service-title">Aplicação de Enzimas</div>
-          <div class="service-desc">Tratamento direcionado para gordura localizada.</div>
+
+        <div class="benefit-card">
+          <div class="b-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          </div>
+          <h4>Prevenção de Rugas</h4>
+          <p>Preenche linhas finas no rosto, colo e pescoço através da retenção hídrica pura, mantendo a jovialidade prolongada.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- LOCALIZAÇÃO -->
-  <section id="localizacao" style="padding: 60px 0; background: var(--bg-subtle);">
-    <div class="container" style="text-align: center;">
-      <h3 style="font-size: 2rem; color: var(--rose-brown-dark); margin-bottom: 10px;">Endereço & Contato</h3>
-      <p style="color: var(--text-muted);">📍 Rua Dr. Braulino, 1514 - Universidade, Macapá - AP</p>
-      <p style="color: var(--text-muted); margin-top: 5px;">📞 (96) 97400-3963</p>
+  <!-- ==========================================================
+       CATÁLOGO DE SERVIÇOS COM FILTRO POR ABAS
+       ========================================================== -->
+  <section class="section-services" id="servicos">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">Nossas Terapias</span>
+        <h2>Catálogo de Cuidados</h2>
+        <p>Protocolos desenhados sob medida por uma Fisioterapeuta especialista para promover equilíbrio estético e alívio funcional.</p>
+      </div>
+
+      <!-- Abas de Filtro -->
+      <div class="filter-tabs">
+        <button class="tab-btn active" onclick="filtrarServicos('todos', this)">Todos os Cuidados</button>
+        <button class="tab-btn" onclick="filtrarServicos('estetica', this)">Estética Facial & Corporal</button>
+        <button class="tab-btn" onclick="filtrarServicos('fisio', this)">Fisioterapia & Bem-Estar</button>
+      </div>
+
+      <!-- Grid de Serviços -->
+      <div class="services-grid" id="servicesGrid">
+        
+        <!-- Card 1 -->
+        <div class="service-card" data-cat="estetica">
+          <div>
+            <div class="service-category-tag">Estética Avançada</div>
+            <h3>Hidratação Injetável</h3>
+            <p>Tratamento com ácido hialurônico de baixa reticulação para reestruturar as camadas internas da derme.</p>
+          </div>
+          <div class="service-footer">
+            <span class="service-time">⏱️ 50 min</span>
+            <button class="btn-select-proc" onclick="preencherProcedimento('Hidratação Injetável')">Agendar &rarr;</button>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="service-card" data-cat="fisio">
+          <div>
+            <div class="service-category-tag">Fisioterapia Clínica</div>
+            <h3>Reabilitação & Fisioterapia Traumato-Ortopédica</h3>
+            <p>Diagnóstico postural e tratamento focado em alívio de dores crônicas, recuperação articular e mobilidade.</p>
+          </div>
+          <div class="service-footer">
+            <span class="service-time">⏱️ 60 min</span>
+            <button class="btn-select-proc" onclick="preencherProcedimento('Fisioterapia Ortopédica')">Agendar &rarr;</button>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="service-card" data-cat="estetica">
+          <div>
+            <div class="service-category-tag">Estética Facial</div>
+            <h3>Limpeza de Pele Profunda com Fototerapia</h3>
+            <p>Remoção meticulosa de impurezas, comedões e aplicação de LED cicatrizante para equilíbrio do microbioma facial.</p>
+          </div>
+          <div class="service-footer">
+            <span class="service-time">⏱️ 80 min</span>
+            <button class="btn-select-proc" onclick="preencherProcedimento('Limpeza de Pele Profunda')">Agendar &rarr;</button>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="service-card" data-cat="fisio">
+          <div>
+            <div class="service-category-tag">Fisioterapia & Bem-Estar</div>
+            <h3>Drenagem Linfática Método Exclusivo</h3>
+            <p>Técnica suave com precisão anatômica para redução de edemas, desintoxicação e pós-operatório acelerado.</p>
+          </div>
+          <div class="service-footer">
+            <span class="service-time">⏱️ 60 min</span>
+            <button class="btn-select-proc" onclick="preencherProcedimento('Drenagem Linfática')">Agendar &rarr;</button>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="service-card" data-cat="estetica">
+          <div>
+            <div class="service-category-tag">Estética Avançada</div>
+            <h3>Microagulhamento com Drug Delivery</h3>
+            <p>Indução percutânea de colágeno associada a ativos estéreis de alta permeação para manchas e textura.</p>
+          </div>
+          <div class="service-footer">
+            <span class="service-time">⏱️ 60 min</span>
+            <button class="btn-select-proc" onclick="preencherProcedimento('Microagulhamento')">Agendar &rarr;</button>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="service-card" data-cat="fisio">
+          <div>
+            <div class="service-category-tag">Bem-Estar & Terapia Manual</div>
+            <h3>Massagem Terapêutica & Liberação Miofascial</h3>
+            <p>Desativação de pontos-gatilho (trigger points), eliminação de nós de tensão nos ombros, costas e lombar.</p>
+          </div>
+          <div class="service-footer">
+            <span class="service-time">⏱️ 50 min</span>
+            <button class="btn-select-proc" onclick="preencherProcedimento('Liberação Miofascial')">Agendar &rarr;</button>
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- ==========================================================
+       SIMULADOR & AGENDADOR VIA WHATSAPP
+       ========================================================== -->
+  <section class="section-scheduler" id="agendamento">
+    <div class="container">
+      <div class="scheduler-box">
+        <div style="text-align: center; margin-bottom: 24px;">
+          <span class="badge">Atendimento com Hora Marcada</span>
+          <h2 style="font-size: 2.4rem; margin-top: 10px;">Simulador de Agendamento</h2>
+          <p style="color: var(--text-muted); font-size: 0.92rem;">
+            Escolha seu procedimento preferido e data para falar diretamente com a recepção da Dra. Regiane Barbosa no WhatsApp.
+          </p>
+        </div>
+
+        <form class="scheduler-form" id="bookingForm" onsubmit="enviarWhatsApp(event)">
+          <div class="form-group">
+            <label for="clientName">Seu Nome Completo *</label>
+            <input type="text" id="clientName" class="form-control" placeholder="Ex: Ana Carolina Silva" required>
+          </div>
+
+          <div class="form-group">
+            <label for="procedureSelect">Procedimento Escolhido *</label>
+            <select id="procedureSelect" class="form-control" required>
+              <option value="">Selecione um procedimento...</option>
+              <option value="Hidratação Injetável">Hidratação Injetável Dérmica</option>
+              <option value="Fisioterapia Ortopédica">Fisioterapia Traumato-Ortopédica</option>
+              <option value="Limpeza de Pele Profunda">Limpeza de Pele Profunda</option>
+              <option value="Drenagem Linfática">Drenagem Linfática Manual</option>
+              <option value="Microagulhamento">Microagulhamento & Drug Delivery</option>
+              <option value="Liberação Miofascial">Massagem & Liberação Miofascial</option>
+              <option value="Avaliação Geral">Consulta / Avaliação Geral</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="preferredDate">Data Preferencial *</label>
+            <input type="date" id="preferredDate" class="form-control" required>
+          </div>
+
+          <div class="form-group">
+            <label>Turno de Preferência *</label>
+            <div class="radio-shifts">
+              <label class="shift-label">
+                <input type="radio" name="shift" value="Manhã" checked>
+                <span>☀️ Manhã (08h - 12h)</span>
+              </label>
+              <label class="shift-label">
+                <input type="radio" name="shift" value="Tarde">
+                <span>🌤️ Tarde (14h - 19h)</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="clientNotes">Observações ou Queixas (Opcional)</label>
+            <textarea id="clientNotes" class="form-control" rows="3" placeholder="Conte-nos brevemente o que deseja tratar ou sintomas..."></textarea>
+          </div>
+
+          <div class="form-group full-width" style="margin-top: 10px;">
+            <button type="submit" class="btn btn-gold" style="width: 100%;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z"></path>
+              </svg>
+              Confirmar e Abrir no WhatsApp
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       LOCALIZAÇÃO & CONTATO (MACAPÁ)
+       ========================================================== -->
+  <section class="section-contact" id="contato">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-card">
+          <span class="badge">Onde Estamos</span>
+          <h2 style="font-size: 2.3rem; margin: 12px 0 16px;">Espaço Cuidar em Macapá</h2>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">
+            Um ambiente acolhedor, privativo e equipado para proporcionar uma experiência de acolhimento e renovação total.
+          </p>
+
+          <div class="contact-items">
+            <div class="c-item">
+              <div class="c-icon">📍</div>
+              <div class="c-text">
+                <h4>Endereço</h4>
+                <p>Rua Dr. Braulino, 1514 - Universidade, Macapá - AP</p>
+                <p style="font-size: 0.8rem; color: var(--gold-dark); margin-top: 3px;">Fácil acesso e estacionamento tranquilo</p>
+              </div>
+            </div>
+
+            <div class="c-item">
+              <div class="c-icon">📞</div>
+              <div class="c-text">
+                <h4>WhatsApp & Ligações</h4>
+                <p><a href="https://wa.me/5596974003963" target="_blank" style="font-weight: 600; color: var(--text-dark);">(96) 97400-3963</a></p>
+              </div>
+            </div>
+
+            <div class="c-item">
+              <div class="c-icon">⏰</div>
+              <div class="c-text">
+                <h4>Horários de Atendimento</h4>
+                <p>Segunda a Sexta: 08:00 às 12:00 e 14:00 às 19:00</p>
+                <p>Sábados: Atendimentos com agendamento prévio</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="map-frame-box">
+          <div class="map-placeholder-inner">
+            <div style="font-size: 2.4rem; margin-bottom: 8px;">🗺️</div>
+            <h4 style="font-size: 1.4rem; margin-bottom: 6px;">Universidade - Macapá</h4>
+            <p style="font-size: 0.86rem; color: var(--text-muted); margin-bottom: 20px;">
+              Rua Dr. Braulino, 1514<br>Pronto para nos fazer uma visita?
+            </p>
+            <a href="https://maps.google.com/?q=Rua+Dr+Braulino+1514+Universidade+Macapa+AP" target="_blank" class="btn btn-outline-gold" style="padding: 10px 20px; font-size: 0.78rem;">
+              Abrir Trajeto no Google Maps
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       RODAPÉ
+       ========================================================== -->
   <footer class="footer">
-    <div class="container footer-grid">
-      <div>
-        <h3>Espaço Cuidar</h3>
-        <p>Saúde, Estética e Bem-estar em Macapá.</p>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3>Espaço <span>Cuidar</span></h3>
+          <p>Dra. Regiane Barbosa • Fisioterapeuta e Especialista em Estética Facial & Corporal</p>
+        </div>
+        <div style="display: flex; gap: 20px; font-size: 0.85rem;">
+          <a href="#hero" style="color: rgba(255,255,255,0.7);">Início</a>
+          <a href="#servicos" style="color: rgba(255,255,255,0.7);">Procedimentos</a>
+          <a href="#agendamento" style="color: rgba(255,255,255,0.7);">Agendamento</a>
+          <a href="#contato" style="color: rgba(255,255,255,0.7);">Contato</a>
+        </div>
       </div>
-      <div>
-        <p>© Espaço Cuidar. Todos os direitos reservados.</p>
+      <div class="footer-bottom">
+        <p>© <span id="currentYear"></span> Espaço Cuidar. Todos os direitos reservados. Macapá - Amapá.</p>
       </div>
     </div>
   </footer>
 
-  <!-- BOTÃO FLUTUANTE WHATSAPP -->
-  <a href="https://wa.me/5596974003963" target="_blank" class="floating-whatsapp" title="Falar no WhatsApp">💬</a>
+  <!-- ==========================================================
+       BOTÃO FLUTUANTE DO WHATSAPP
+       ========================================================== -->
+  <a href="https://wa.me/5596974003963?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20os%20atendimentos%20no%20Espa%C3%A7o%20Cuidar!" target="_blank" class="floating-whatsapp" title="Falar no WhatsApp com a Dra. Regiane">
+    <svg viewBox="0 0 24 24">
+      <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm5.79 14.33c-.24.68-1.39 1.3-1.93 1.38-.51.08-1.17.11-3.79-.97-3.34-1.38-5.49-4.79-5.66-5.01-.16-.22-1.36-1.81-1.36-3.45 0-1.64.86-2.45 1.16-2.78.31-.33.67-.41.89-.41.22 0 .44.01.63.02.2.01.47-.08.73.56.27.68.92 2.25 1 2.42.08.16.14.36.03.58-.11.22-.16.36-.33.56-.16.2-.35.45-.5.6-.16.16-.33.34-.14.67.19.33.84 1.39 1.8 2.25 1.24 1.11 2.29 1.45 2.62 1.61.33.16.52.14.71-.08.19-.22.82-.95 1.04-1.28.22-.33.44-.27.73-.16.29.11 1.85.87 2.17 1.03.32.16.54.24.62.38.08.13.08.79-.16 1.47z"/>
+    </svg>
+  </a>
 
-  <!-- MODAL ADMIN / FLUXO DE CAIXA -->
-  <div id="adminModal" class="admin-modal-overlay">
-    <div class="admin-modal">
-      <div class="admin-header">
+  <!-- ==========================================================
+       MODAL DE FLUXO DE CAIXA (MÓDULO ADMINISTRATIVO)
+       ========================================================== -->
+  <div class="modal-overlay" id="adminModal">
+    <div class="modal-window">
+      <div class="modal-header">
         <div>
-          <h3>Painel Administrativo & Fluxo de Caixa</h3>
-          <p>Controle financeiro simples do Espaço Cuidar</p>
+          <h3>Painel Financeiro & Fluxo de Caixa</h3>
+          <p style="font-size: 0.78rem; color: var(--text-muted);">Gestão interna do Espaço Cuidar • Dados gravados localmente</p>
         </div>
-        <button onclick="toggleAdminModal()" style="font-weight: bold; font-size: 1.2rem;">✕</button>
+        <button class="btn-close-modal" id="closeAdminModalBtn">&times;</button>
       </div>
-      <div class="admin-body">
-        <div class="stat-cards">
-          <div class="stat-card">
-            <h5>Entradas (Total)</h5>
-            <p id="totalEntradas">R$ 0,00</p>
+
+      <div class="modal-body">
+        <!-- Resumo Financeiro (KPIs) -->
+        <div class="finance-kpis">
+          <div class="kpi-card income">
+            <span class="kpi-title">Entradas do Período</span>
+            <div class="kpi-value" id="kpiIncome">R$ 0,00</div>
           </div>
-          <div class="stat-card">
-            <h5>Saídas (Total)</h5>
-            <p id="totalSaidas" style="color: #c0392b;">R$ 0,00</p>
+          <div class="kpi-card expense">
+            <span class="kpi-title">Saídas / Despesas</span>
+            <div class="kpi-value" id="kpiExpense">R$ 0,00</div>
           </div>
-          <div class="stat-card">
-            <h5>Saldo Atual</h5>
-            <p id="saldoAtual" style="color: #27ae60;">R$ 0,00</p>
+          <div class="kpi-card balance">
+            <span class="kpi-title">Saldo Líquido</span>
+            <div class="kpi-value" id="kpiBalance">R$ 0,00</div>
           </div>
         </div>
 
-        <form id="caixaForm" onsubmit="adicionarTransacao(event)">
-          <div style="display: grid; grid-template-columns: 2fr 1fr 1fr auto; gap: 10px; align-items: end;">
-            <div class="form-group">
-              <label>Descrição (Ex: Botox Ana)</label>
-              <input type="text" id="desc" required />
+        <!-- Formulário de Novo Lançamento -->
+        <div class="transaction-form">
+          <h4>Novo Lançamento</h4>
+          <form id="cashflowForm" onsubmit="adicionarTransacao(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label style="font-size: 0.74rem;">Descrição</label>
+                <input type="text" id="txDescription" class="form-control" placeholder="Ex: Hidratação Facial Paciente X" required style="padding: 10px 14px;">
+              </div>
+              <div class="form-group">
+                <label style="font-size: 0.74rem;">Valor (R$)</label>
+                <input type="number" step="0.01" min="0.01" id="txValue" class="form-control" placeholder="0,00" required style="padding: 10px 14px;">
+              </div>
+              <div class="form-group">
+                <label style="font-size: 0.74rem;">Categoria</label>
+                <select id="txCategory" class="form-control" style="padding: 10px 14px;">
+                  <option value="Procedimento">Procedimento Estético</option>
+                  <option value="Fisioterapia">Sessão Fisioterapia</option>
+                  <option value="Insumos">Insumos / Produtos</option>
+                  <option value="Custos Fixos">Aluguel / Energia / Água</option>
+                  <option value="Outros">Outras Entradas/Saídas</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label style="font-size: 0.74rem;">Tipo</label>
+                <select id="txType" class="form-control" style="padding: 10px 14px;">
+                  <option value="IN">Entrada (+)</option>
+                  <option value="OUT">Saída (-)</option>
+                </select>
+              </div>
+              <div>
+                <button type="submit" class="btn btn-gold" style="padding: 11px 20px; font-size: 0.76rem; width: 100%;">Salvar</button>
+              </div>
             </div>
-            <div class="form-group">
-              <label>Valor (R$)</label>
-              <input type="number" step="0.01" id="valor" required />
-            </div>
-            <div class="form-group">
-              <label>Tipo</label>
-              <select id="tipo">
-                <option value="entrada">Entrada</option>
-                <option value="saida">Saída</option>
-              </select>
-            </div>
-            <button type="submit" class="btn btn-primary" style="margin-bottom: 15px;">Salvar</button>
-          </div>
-        </form>
+          </form>
+        </div>
 
-        <table>
-          <thead>
-            <tr>
-              <th>Descrição</th>
-              <th>Tipo</th>
-              <th>Valor</th>
-              <th>Ação</th>
-            </tr>
-          </thead>
-          <tbody id="tabelaCaixa"></tbody>
-        </table>
+        <!-- Tabela do Livro Caixa -->
+        <h4 style="font-size: 1.25rem; margin-bottom: 12px; color: var(--text-dark);">Extrato de Lançamentos</h4>
+        <div class="ledger-container">
+          <table class="ledger-table">
+            <thead>
+              <tr>
+                <th>Data</th>
+                <th>Descrição</th>
+                <th>Categoria</th>
+                <th>Tipo</th>
+                <th>Valor</th>
+                <th style="text-align: center;">Ações</th>
+              </tr>
+            </thead>
+            <tbody id="ledgerTableBody">
+              <!-- Linhas geradas dinamicamente via JS -->
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- JAVASCRIPT DO SISTEMA -->
+  <!-- ==========================================================
+       SCRIPTS: LÓGICA INTERATIVA E CAIXA COM LOCALSTORAGE
+       ========================================================== -->
   <script>
-    function toggleAdminModal() {
-      const modal = document.getElementById('adminModal');
-      modal.classList.toggle('active');
-    }
+    // Atualizar ano dinâmico
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
 
-    let transacoes = JSON.parse(localStorage.getItem('espacoCuidar_caixa')) || [];
+    // Iniciar data mínima no agendador como "hoje"
+    const today = new Date().toISOString().split('T')[0];
+    document.getElementById('preferredDate').min = today;
 
-    function atualizarCaixa() {
-      const tabela = document.getElementById('tabelaCaixa');
-      tabela.innerHTML = '';
-      
-      let entradas = 0;
-      let saidas = 0;
+    /* ==========================================================
+       FILTRO DINÂMICO DE SERVIÇOS
+       ========================================================== */
+    function filtrarServicos(categoria, botao) {
+      // Atualizar classe do botão ativo
+      const buttons = document.querySelectorAll('.tab-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      botao.classList.add('active');
 
-      transacoes.forEach((item, index) => {
-        if (item.tipo === 'entrada') entradas += parseFloat(item.valor);
-        if (item.tipo === 'saida') saidas += parseFloat(item.valor);
-
-        tabela.innerHTML += `
-          <tr>
-            <td>${item.desc}</td>
-            <td style="color: ${item.tipo === 'entrada' ? 'green' : 'red'}; font-weight: bold;">${item.tipo.toUpperCase()}</td>
-            <td>R$ ${parseFloat(item.valor).toFixed(2)}</td>
-            <td><button onclick="removerTransacao(${index})" style="color: red; background: none;">Excluir</button></td>
-          </tr>
-        `;
+      const cards = document.querySelectorAll('.service-card');
+      cards.forEach(card => {
+        if (categoria === 'todos' || card.getAttribute('data-cat') === categoria) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
       });
-
-      document.getElementById('totalEntradas').innerText = `R$ ${entradas.toFixed(2)}`;
-      document.getElementById('totalSaidas').innerText = `R$ ${saidas.toFixed(2)}`;
-      document.getElementById('saldoAtual').innerText = `R$ ${(entradas - saidas).toFixed(2)}`;
-
-      localStorage.setItem('espacoCuidar_caixa', JSON.stringify(transacoes));
     }
 
-    function adicionarTransacao(e) {
+    /* ==========================================================
+       PREENCHER PROCEDIMENTO NO AGENDADOR
+       ========================================================== */
+    function preencherProcedimento(nomeProcedimento) {
+      const select = document.getElementById('procedureSelect');
+      select.value = nomeProcedimento;
+      
+      // Scroll suave até a seção do agendamento
+      document.getElementById('agendamento').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    /* ==========================================================
+       INTEGRAÇÃO AGENDAMENTO COM WHATSAPP
+       ========================================================== */
+    function enviarWhatsApp(e) {
       e.preventDefault();
-      const desc = document.getElementById('desc').value;
-      const valor = document.getElementById('valor').value;
-      const tipo = document.getElementById('tipo').value;
 
-      transacoes.push({ desc, valor, tipo });
-      document.getElementById('caixaForm').reset();
-      atualizarCaixa();
-    }
-
-    function removerTransacao(index) {
-      transacoes.splice(index, 1);
-      atualizarCaixa();
-    }
-
-    atualizarCaixa();
-  </script>
-</body>
-</html>
+      const nome = document.getElementById('clientName').value.trim();
+      const procedimento = document.getElementById('procedureSelect').value;
+      const dataRaw = document.getElementById('preferredDate').value;
+      const turno =
