@@ -11,9 +11,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-    /* ==========================================================================
-       VARIÁVEIS DE DESIGN & TEMA (Elegante, Acolhedor e Sofisticado)
-       ========================================================================== */
     :root {
       --bg-cream: #FAF7F2;
       --bg-surface: #FFFFFF;
@@ -36,18 +33,10 @@
       --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
-      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: 'Plus Jakarta Sans', sans-serif;
       background-color: var(--bg-cream);
       color: var(--text-main);
       line-height: 1.6;
@@ -56,20 +45,10 @@
 
     h1, h2, h3, h4, .serif-font {
       font-family: 'Cormorant Garamond', serif;
-      letter-spacing: -0.02em;
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    button {
-      font-family: inherit;
-      cursor: pointer;
-      border: none;
-      outline: none;
-    }
+    a { text-decoration: none; color: inherit; }
+    button { font-family: inherit; cursor: pointer; border: none; outline: none; }
 
     .container {
       width: 100%;
@@ -78,9 +57,7 @@
       padding: 0 24px;
     }
 
-    /* ==========================================================================
-       HEADER & NAVEGAÇÃO
-       ========================================================================== */
+    /* HEADER */
     .header {
       position: sticky;
       top: 0;
@@ -88,754 +65,385 @@
       background-color: rgba(250, 247, 242, 0.95);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--border-color);
-      transition: var(--transition);
     }
 
     .header-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 84px;
-    }
-
-    .logo-container {
-      display: flex;
-      flex-direction: column;
+      height: 80px;
     }
 
     .logo-title {
-      font-size: 1.75rem;
+      font-size: 1.6rem;
       font-weight: 700;
       color: var(--rose-brown);
-      line-height: 1.1;
     }
 
     .logo-subtitle {
-      font-size: 0.8rem;
-      font-weight: 500;
+      font-size: 0.75rem;
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--gold-dark);
     }
 
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 28px;
-    }
+    .nav-links { display: flex; gap: 24px; }
+    .nav-link { font-size: 0.95rem; font-weight: 500; color: var(--text-muted); }
+    .nav-link:hover { color: var(--rose-brown); }
 
-    .nav-link {
-      font-size: 0.95rem;
-      font-weight: 500;
-      color: var(--text-muted);
-      transition: var(--transition);
-      position: relative;
-    }
-
-    .nav-link:hover {
-      color: var(--rose-brown);
-    }
-
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      width: 0%;
-      height: 2px;
-      bottom: -4px;
-      left: 0;
-      background: var(--gold);
-      transition: var(--transition);
-    }
-
-    .nav-link:hover::after {
-      width: 100%;
-    }
-
-    .header-actions {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-
-    /* Botões Padrão */
     .btn {
       display: inline-flex;
       align-items: center;
-      justify-content: center;
       gap: 8px;
-      padding: 12px 24px;
-      font-size: 0.92rem;
+      padding: 10px 20px;
+      font-size: 0.9rem;
       font-weight: 600;
       border-radius: 50px;
       transition: var(--transition);
-      text-align: center;
     }
 
-    .btn-primary {
-      background-color: var(--rose-brown);
-      color: #FFFFFF;
-      box-shadow: 0 4px 15px rgba(126, 77, 69, 0.25);
-    }
-
-    .btn-primary:hover {
-      background-color: var(--rose-brown-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(126, 77, 69, 0.35);
-    }
-
-    .btn-gold {
-      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
-      color: #FFFFFF;
-      box-shadow: 0 4px 15px rgba(197, 160, 89, 0.3);
-    }
-
-    .btn-gold:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 22px rgba(197, 160, 89, 0.45);
-    }
-
-    .btn-outline {
-      background: transparent;
-      border: 1px solid var(--rose-brown);
-      color: var(--rose-brown);
-    }
-
-    .btn-outline:hover {
-      background: var(--rose-subtle);
-    }
+    .btn-primary { background-color: var(--rose-brown); color: #FFF; }
+    .btn-primary:hover { background-color: var(--rose-brown-dark); }
+    .btn-gold { background: linear-gradient(135deg, var(--gold), var(--gold-dark)); color: #FFF; }
 
     .btn-admin-link {
       background: transparent;
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       color: var(--text-muted);
-      display: flex;
-      align-items: center;
-      gap: 6px;
       padding: 6px 12px;
       border-radius: var(--radius-sm);
       border: 1px dashed var(--border-color);
-      transition: var(--transition);
     }
 
-    .btn-admin-link:hover {
-      color: var(--rose-brown);
-      border-color: var(--rose-brown);
-      background: #FFFFFF;
-    }
-
-    /* ==========================================================================
-       HERO SECTION
-       ========================================================================== */
-    .hero {
-      position: relative;
-      padding: 90px 0 100px;
-      background: radial-gradient(circle at 80% 20%, rgba(245, 239, 230, 0.8) 0%, rgba(250, 247, 242, 1) 70%);
-      overflow: hidden;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 50px;
-      align-items: center;
-    }
-
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--rose-subtle);
-      border: 1px solid var(--border-color);
-      color: var(--rose-brown);
-      padding: 6px 16px;
-      border-radius: 50px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      margin-bottom: 24px;
-    }
-
-    .hero-badge svg {
-      color: var(--gold);
-    }
-
-    .hero-title {
-      font-size: 3.8rem;
-      line-height: 1.1;
-      font-weight: 700;
-      color: var(--rose-brown-dark);
-      margin-bottom: 22px;
-    }
-
-    .hero-title span {
-      font-style: italic;
-      color: var(--gold-dark);
-      font-weight: 400;
-    }
-
-    .hero-subtitle {
-      font-size: 1.15rem;
-      color: var(--text-muted);
-      margin-bottom: 36px;
-      max-width: 540px;
-    }
-
-    .hero-cta-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-      align-items: center;
-    }
+    /* HERO */
+    .hero { padding: 70px 0; }
+    .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+    .hero-title { font-size: 3.2rem; color: var(--rose-brown-dark); line-height: 1.1; margin-bottom: 20px; }
+    .hero-title span { color: var(--gold-dark); font-style: italic; }
+    .hero-subtitle { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 30px; }
 
     .hero-card-preview {
-      background: #FFFFFF;
+      background: #FFF;
       border-radius: var(--radius-lg);
-      padding: 36px;
+      padding: 30px;
       box-shadow: var(--shadow-soft);
       border: 1px solid var(--border-color);
-      position: relative;
     }
 
-    .hero-card-preview::before {
-      content: '';
-      position: absolute;
-      inset: -10px;
-      border: 1px solid rgba(197, 160, 89, 0.3);
-      border-radius: calc(var(--radius-lg) + 10px);
-      z-index: -1;
-    }
+    /* DESTAQUE & SERVIÇOS */
+    .special-section { padding: 80px 0; background: #FFF; }
+    .section-title { font-size: 2.5rem; color: var(--rose-brown-dark); text-align: center; margin-bottom: 40px; }
 
-    .preview-header {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 24px;
-      padding-bottom: 20px;
-      border-bottom: 1px solid var(--border-color);
-    }
-
-    .avatar-regiane {
-      width: 68px;
-      height: 68px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--rose-subtle) 0%, var(--gold-light) 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.8rem;
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 700;
-      color: var(--rose-brown);
-      border: 2px solid var(--gold);
-    }
-
-    .preview-info h4 {
-      font-size: 1.35rem;
-      color: var(--rose-brown-dark);
-    }
-
-    .preview-info p {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-    }
-
-    .highlights-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-
-    .highlights-list li {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 0.95rem;
-      color: var(--text-main);
-    }
-
-    .icon-check {
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      background: var(--rose-subtle);
-      color: var(--rose-brown);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    /* ==========================================================================
-       DESTAQUE ESPECIAL: HIDRATAÇÃO INJETÁVEL
-       ========================================================================== */
-    .special-section {
-      padding: 100px 0;
-      background: linear-gradient(180deg, var(--bg-cream) 0%, #FFFFFF 100%);
-      position: relative;
-    }
-
-    .section-header {
-      text-align: center;
-      max-width: 720px;
-      margin: 0 auto 56px;
-    }
-
-    .section-tag {
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      color: var(--gold-dark);
-      font-weight: 700;
-      margin-bottom: 12px;
-      display: block;
-    }
-
-    .section-title {
-      font-size: 2.8rem;
-      color: var(--rose-brown-dark);
-      line-height: 1.2;
-      margin-bottom: 16px;
-    }
-
-    .section-desc {
-      color: var(--text-muted);
-      font-size: 1.05rem;
-    }
-
-    .feature-banner {
-      background: radial-gradient(circle at top right, #FFFFFF, var(--bg-subtle));
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-lg);
-      padding: 50px;
-      box-shadow: var(--shadow-soft);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .feature-banner::after {
-      content: 'HIDRATAÇÃO INJETÁVEL';
-      position: absolute;
-      bottom: -15px;
-      right: 20px;
-      font-size: 4rem;
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 700;
-      color: rgba(126, 77, 69, 0.03);
-      pointer-events: none;
-      white-space: nowrap;
-    }
-
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 28px;
-      margin-top: 40px;
-      margin-bottom: 40px;
-    }
-
+    .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
     .benefit-card {
-      background: #FFFFFF;
-      padding: 28px 24px;
+      background: var(--bg-cream);
+      padding: 20px;
       border-radius: var(--radius-md);
       border: 1px solid var(--border-color);
-      transition: var(--transition);
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
     }
 
-    .benefit-card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-hover);
-      border-color: var(--gold);
-    }
-
-    .benefit-icon-wrapper {
-      width: 50px;
-      height: 50px;
-      border-radius: 12px;
-      background: var(--gold-light);
-      color: var(--gold-dark);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .benefit-card h4 {
-      font-size: 1.4rem;
-      color: var(--rose-brown);
-    }
-
-    .benefit-card p {
-      font-size: 0.92rem;
-      color: var(--text-muted);
-      line-height: 1.5;
-    }
-
-    /* ==========================================================================
-       CATÁLOGO DE SERVIÇOS
-       ========================================================================== */
-    .services-section {
-      padding: 100px 0;
-      background-color: var(--bg-cream);
-    }
-
-    .category-title-wrapper {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin: 50px 0 30px;
-      padding-bottom: 12px;
-      border-bottom: 2px solid var(--gold-light);
-    }
-
-    .category-title {
-      font-size: 2.2rem;
-      color: var(--rose-brown);
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-      gap: 24px;
-    }
-
+    .services-section { padding: 80px 0; }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; }
     .service-card {
-      background: #FFFFFF;
+      background: #FFF;
       border: 1px solid var(--border-color);
       border-radius: var(--radius-md);
-      padding: 24px;
-      transition: var(--transition);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      height: 100%;
-    }
-
-    .service-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-hover);
-      border-color: var(--rose-brown-light);
-    }
-
-    .service-tag {
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      color: var(--gold-dark);
-      margin-bottom: 8px;
-      display: block;
-    }
-
-    .service-title {
-      font-size: 1.4rem;
-      color: var(--rose-brown-dark);
-      margin-bottom: 10px;
-    }
-
-    .service-desc {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      margin-bottom: 20px;
-      flex-grow: 1;
-    }
-
-    .service-action-link {
-      font-size: 0.88rem;
-      font-weight: 600;
-      color: var(--rose-brown);
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: var(--transition);
-      margin-top: auto;
-    }
-
-    .service-action-link:hover {
-      color: var(--gold-dark);
-      gap: 10px;
-    }
-
-    /* ==========================================================================
-       LOCALIZAÇÃO E DIFERENCIAIS
-       ========================================================================== */
-    .location-section {
-      padding: 80px 0;
-      background: var(--bg-subtle);
-      border-top: 1px solid var(--border-color);
-      border-bottom: 1px solid var(--border-color);
-    }
-
-    .location-box {
-      background: #FFFFFF;
-      border-radius: var(--radius-lg);
-      padding: 44px;
-      box-shadow: var(--shadow-soft);
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      align-items: center;
-    }
-
-    .location-details h3 {
-      font-size: 2.3rem;
-      color: var(--rose-brown-dark);
-      margin-bottom: 16px;
-    }
-
-    .info-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      margin-bottom: 18px;
-    }
-
-    .info-item svg {
-      color: var(--rose-brown);
-      margin-top: 4px;
-      flex-shrink: 0;
-    }
-
-    .info-text strong {
-      display: block;
-      color: var(--rose-brown-dark);
-      font-size: 0.95rem;
-    }
-
-    .info-text span {
-      color: var(--text-muted);
-      font-size: 0.92rem;
-    }
-
-    .map-card-placeholder {
-      background: var(--rose-subtle);
-      border: 2px dashed var(--gold);
-      border-radius: var(--radius-md);
-      padding: 40px 30px;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 14px;
-    }
-
-    /* ==========================================================================
-       FOOTER
-       ========================================================================== */
-    .footer {
-      background-color: var(--rose-brown-dark);
-      color: #FAF7F2;
-      padding: 70px 0 30px;
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr;
-      gap: 50px;
-      margin-bottom: 50px;
-    }
-
-    .footer-brand h3 {
-      font-size: 2rem;
-      color: #FFFFFF;
-      margin-bottom: 8px;
-    }
-
-    .footer-brand p {
-      color: #D1BEB9;
-      font-size: 0.95rem;
-      max-width: 320px;
-      margin-bottom: 20px;
-    }
-
-    .footer-col h4 {
-      font-size: 1.3rem;
-      color: var(--gold-light);
-      margin-bottom: 20px;
-    }
-
-    .footer-links {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .footer-links a {
-      color: #D1BEB9;
-      font-size: 0.9rem;
-      transition: var(--transition);
-    }
-
-    .footer-links a:hover {
-      color: #FFFFFF;
-      padding-left: 4px;
-    }
-
-    .footer-bottom {
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      padding-top: 25px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.85rem;
-      color: #B4A09B;
-    }
-
-    /* ==========================================================================
-       BOTÃO FLUTUANTE WHATSAPP
-       ========================================================================== */
-    .floating-whatsapp {
-      position: fixed;
-      bottom: 28px;
-      right: 28px;
-      width: 62px;
-      height: 62px;
-      border-radius: 50%;
-      background: #25D366;
-      color: #FFFFFF;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
-      z-index: 999;
-      transition: var(--transition);
-      cursor: pointer;
-    }
-
-    .floating-whatsapp:hover {
-      transform: scale(1.1);
-      box-shadow: 0 10px 30px rgba(37, 211, 102, 0.6);
-    }
-
-    .whatsapp-tooltip {
-      position: absolute;
-      right: 74px;
-      background: #FFFFFF;
-      color: var(--text-main);
-      padding: 8px 16px;
-      border-radius: 20px;
-      font-size: 0.82rem;
-      font-weight: 600;
-      white-space: nowrap;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      pointer-events: none;
-      border: 1px solid var(--border-color);
-    }
-
-    /* ==========================================================================
-       MÓDULO ADMINISTRATIVO (MODAL / OVERLAY)
-       ========================================================================== */
-    .admin-modal-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(45, 37, 36, 0.75);
-      backdrop-filter: blur(6px);
-      z-index: 1000;
-      display: none;
-      align-items: center;
-      justify-content: center;
       padding: 20px;
     }
 
-    .admin-modal-overlay.active {
-      display: flex;
-    }
+    .service-title { font-size: 1.3rem; color: var(--rose-brown-dark); margin-bottom: 8px; }
+    .service-desc { font-size: 0.88rem; color: var(--text-muted); }
 
+    /* FOOTER */
+    .footer { background-color: var(--rose-brown-dark); color: #FFF; padding: 50px 0 20px; margin-top: 60px; }
+    .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 40px; }
+
+    /* MODAL ADMIN */
+    .admin-modal-overlay {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.6);
+      z-index: 1000; display: none; align-items: center; justify-content: center; padding: 20px;
+    }
+    .admin-modal-overlay.active { display: flex; }
     .admin-modal {
-      background: #FFFFFF;
-      width: 100%;
-      max-width: 1100px;
-      max-height: 90vh;
-      border-radius: var(--radius-lg);
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
-      animation: modalFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      background: #FFF; width: 100%; max-width: 900px; max-height: 85vh;
+      border-radius: var(--radius-lg); overflow: hidden; display: flex; flex-direction: column;
+    }
+    .admin-header { padding: 20px; background: var(--rose-subtle); display: flex; justify-content: space-between; align-items: center; }
+    .admin-body { padding: 20px; overflow-y: auto; }
+    .stat-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 20px; }
+    .stat-card { background: var(--bg-cream); padding: 15px; border-radius: 10px; border: 1px solid var(--border-color); }
+    .stat-card h5 { font-size: 0.85rem; color: var(--text-muted); }
+    .stat-card p { font-size: 1.4rem; font-weight: 700; color: var(--rose-brown); }
+
+    .form-group { margin-bottom: 15px; }
+    .form-group label { display: block; font-size: 0.85rem; margin-bottom: 5px; }
+    .form-group input, .form-group select {
+      width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: 6px;
     }
 
-    @keyframes modalFadeIn {
-      from { opacity: 0; transform: scale(0.96) translateY(20px); }
-      to { opacity: 1; transform: scale(1) translateY(0); }
+    table { width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 0.88rem; }
+    th, td { padding: 10px; border-bottom: 1px solid var(--border-color); text-align: left; }
+    th { background: var(--bg-subtle); }
+
+    .floating-whatsapp {
+      position: fixed; bottom: 24px; right: 24px; width: 56px; height: 56px;
+      border-radius: 50%; background: #25D366; color: #FFF; display: flex;
+      align-items: center; justify-content: center; font-size: 1.8rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2); z-index: 99;
     }
 
-    .admin-header {
-      background: var(--rose-subtle);
-      border-bottom: 1px solid var(--border-color);
-      padding: 20px 30px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+    @media (max-width: 768px) {
+      .hero-grid, .footer-grid { grid-template-columns: 1fr; }
+      .hero-title { font-size: 2.3rem; }
+      .nav-links { display: none; }
+      .stat-cards { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container header-inner">
+      <div class="logo-container">
+        <span class="logo-title">Espaço Cuidar</span>
+        <span class="logo-subtitle">Regiane Barbosa • Fisioterapeuta</span>
+      </div>
+      <nav class="nav-links">
+        <a href="#especial" class="nav-link">Hidratação Injetável</a>
+        <a href="#servicos" class="nav-link">Serviços</a>
+        <a href="#localizacao" class="nav-link">Localização</a>
+      </nav>
+      <div class="header-actions">
+        <button class="btn-admin-link" onclick="toggleAdminModal()">⚙️ Gestão / Caixa</button>
+        <a href="https://wa.me/5596974003963?text=Olá,%20gostaria%20de%20agendar%20uma%20avaliação!" target="_blank" class="btn btn-gold">Agendar Avaliação</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <h1 class="hero-title">Cuidar de você é a nossa <span>maior especialidade!</span></h1>
+        <p class="hero-subtitle">Saúde, Estética Integrativa e Bem-Estar com atendimento personalizado em Macapá.</p>
+        <a href="https://wa.me/5596974003963?text=Olá,%20quero%20saber%20mais%20sobre%20os%20procedimentos!" target="_blank" class="btn btn-primary">Falar no WhatsApp</a>
+      </div>
+      <div class="hero-card-preview">
+        <h3>Regiane Barbosa</h3>
+        <p style="color: var(--text-muted); margin-bottom: 15px;">Fisioterapeuta & Especialista em Estética</p>
+        <p>✨ Atendimento acolhedor e focado na sua saúde e autoestima.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESTAQUE ESPECIAL -->
+  <section id="especial" class="special-section">
+    <div class="container">
+      <h2 class="section-title">Hidratação Injetável</h2>
+      <p style="text-align:center; margin-bottom: 30px; color: var(--text-muted);">Revitalize sua pele de dentro para fora com resultados visíveis!</p>
+      <div class="feature-grid">
+        <div class="benefit-card">
+          <h4>💧 Hidratação Profunda</h4>
+          <p>Restaura a umidade natural das camadas mais profundas da pele.</p>
+        </div>
+        <div class="benefit-card">
+          <h4>✨ Mais Viço & Brilho</h4>
+          <p>Proporciona luminosidade e aspecto renovado para a face e colo.</p>
+        </div>
+        <div class="benefit-card">
+          <h4>🌿 Elasticidade</h4>
+          <p>Estimula a firmeza e melhora o tônus da pele.</p>
+        </div>
+        <div class="benefit-card">
+          <h4>🛡️ Prevenção</h4>
+          <p>Auxilia na prevenção e amenização do envelhecimento precoce.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+    <!-- SERVIÇOS -->
+  <section id="servicos" class="services-section">
+    <div class="container">
+      <h2 class="section-title">Nossos Serviços</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-title">Fisioterapia Respiratória</div>
+          <div class="service-desc">Atendimento especializado para adultos e crianças.</div>
+        </div>
+        <div class="service-card">
+          <div class="service-title">Limpeza de Pele Personalizada</div>
+          <div class="service-desc">Remoção profunda de impurezas com protocolos específicos.</div>
+        </div>
+        <div class="service-card">
+          <div class="service-title">Toxina Botulínica (Botox)</div>
+          <div class="service-desc">Prevenção e suavização de linhas de expressão.</div>
+        </div>
+        <div class="service-card">
+          <div class="service-title">Microagulhamento Facial</div>
+          <div class="service-desc">Estímulo potente de colágeno e rejuvenescimento.</div>
+        </div>
+        <div class="service-card">
+          <div class="service-title">Massagem Relaxante / Pedras Quentes</div>
+          <div class="service-desc">Alívio de tensões, estresse e dores musculares.</div>
+        </div>
+        <div class="service-card">
+          <div class="service-title">Ventosaterapia & Dry Needling</div>
+          <div class="service-desc">Tratamento de pontos de gatilho e melhora da circulação.</div>
+        </div>
+        <div class="service-card">
+          <div class="service-title">Drenagem Linfática & Detox</div>
+          <div class="service-desc">Redução de inchaços, retenção de líquidos e toxinas.</div>
+        </div>
+        <div class="service-card">
+          <div class="service-title">Aplicação de Enzimas</div>
+          <div class="service-desc">Tratamento direcionado para gordura localizada.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCALIZAÇÃO -->
+  <section id="localizacao" style="padding: 60px 0; background: var(--bg-subtle);">
+    <div class="container" style="text-align: center;">
+      <h3 style="font-size: 2rem; color: var(--rose-brown-dark); margin-bottom: 10px;">Endereço & Contato</h3>
+      <p style="color: var(--text-muted);">📍 Rua Dr. Braulino, 1514 - Universidade, Macapá - AP</p>
+      <p style="color: var(--text-muted); margin-top: 5px;">📞 (96) 97400-3963</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>Espaço Cuidar</h3>
+        <p>Saúde, Estética e Bem-estar em Macapá.</p>
+      </div>
+      <div>
+        <p>© Espaço Cuidar. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BOTÃO FLUTUANTE WHATSAPP -->
+  <a href="https://wa.me/5596974003963" target="_blank" class="floating-whatsapp" title="Falar no WhatsApp">💬</a>
+
+  <!-- MODAL ADMIN / FLUXO DE CAIXA -->
+  <div id="adminModal" class="admin-modal-overlay">
+    <div class="admin-modal">
+      <div class="admin-header">
+        <div>
+          <h3>Painel Administrativo & Fluxo de Caixa</h3>
+          <p>Controle financeiro simples do Espaço Cuidar</p>
+        </div>
+        <button onclick="toggleAdminModal()" style="font-weight: bold; font-size: 1.2rem;">✕</button>
+      </div>
+      <div class="admin-body">
+        <div class="stat-cards">
+          <div class="stat-card">
+            <h5>Entradas (Total)</h5>
+            <p id="totalEntradas">R$ 0,00</p>
+          </div>
+          <div class="stat-card">
+            <h5>Saídas (Total)</h5>
+            <p id="totalSaidas" style="color: #c0392b;">R$ 0,00</p>
+          </div>
+          <div class="stat-card">
+            <h5>Saldo Atual</h5>
+            <p id="saldoAtual" style="color: #27ae60;">R$ 0,00</p>
+          </div>
+        </div>
+
+        <form id="caixaForm" onsubmit="adicionarTransacao(event)">
+          <div style="display: grid; grid-template-columns: 2fr 1fr 1fr auto; gap: 10px; align-items: end;">
+            <div class="form-group">
+              <label>Descrição (Ex: Botox Ana)</label>
+              <input type="text" id="desc" required />
+            </div>
+            <div class="form-group">
+              <label>Valor (R$)</label>
+              <input type="number" step="0.01" id="valor" required />
+            </div>
+            <div class="form-group">
+              <label>Tipo</label>
+              <select id="tipo">
+                <option value="entrada">Entrada</option>
+                <option value="saida">Saída</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary" style="margin-bottom: 15px;">Salvar</button>
+          </div>
+        </form>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Descrição</th>
+              <th>Tipo</th>
+              <th>Valor</th>
+              <th>Ação</th>
+            </tr>
+          </thead>
+          <tbody id="tabelaCaixa"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT DO SISTEMA -->
+  <script>
+    function toggleAdminModal() {
+      const modal = document.getElementById('adminModal');
+      modal.classList.toggle('active');
     }
 
-    .admin-header-title h3 {
-      font-size: 1.6rem;
-      color: var(--rose-brown-dark);
-      margin-bottom: 2px;
+    let transacoes = JSON.parse(localStorage.getItem('espacoCuidar_caixa')) || [];
+
+    function atualizarCaixa() {
+      const tabela = document.getElementById('tabelaCaixa');
+      tabela.innerHTML = '';
+      
+      let entradas = 0;
+      let saidas = 0;
+
+      transacoes.forEach((item, index) => {
+        if (item.tipo === 'entrada') entradas += parseFloat(item.valor);
+        if (item.tipo === 'saida') saidas += parseFloat(item.valor);
+
+        tabela.innerHTML += `
+          <tr>
+            <td>${item.desc}</td>
+            <td style="color: ${item.tipo === 'entrada' ? 'green' : 'red'}; font-weight: bold;">${item.tipo.toUpperCase()}</td>
+            <td>R$ ${parseFloat(item.valor).toFixed(2)}</td>
+            <td><button onclick="removerTransacao(${index})" style="color: red; background: none;">Excluir</button></td>
+          </tr>
+        `;
+      });
+
+      document.getElementById('totalEntradas').innerText = `R$ ${entradas.toFixed(2)}`;
+      document.getElementById('totalSaidas').innerText = `R$ ${saidas.toFixed(2)}`;
+      document.getElementById('saldoAtual').innerText = `R$ ${(entradas - saidas).toFixed(2)}`;
+
+      localStorage.setItem('espacoCuidar_caixa', JSON.stringify(transacoes));
     }
 
-    .admin-header-title p {
-      font-size: 0.85rem;
-      color: var(--text-muted);
+    function adicionarTransacao(e) {
+      e.preventDefault();
+      const desc = document.getElementById('desc').value;
+      const valor = document.getElementById('valor').value;
+      const tipo = document.getElementById('tipo').value;
+
+      transacoes.push({ desc, valor, tipo });
+      document.getElementById('caixaForm').reset();
+      atualizarCaixa();
     }
 
-    .admin-close-btn {
-      background: #FFFFFF;
-      border: 1px solid var(--border-color);
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--text-muted);
-      transition: var(--transition);
-      cursor: pointer;
+    function removerTransacao(index) {
+      transacoes.splice(index, 1);
+      atualizarCaixa();
     }
 
-    .admin-close-btn:hover {
-      background: var(--rose-brown);
-      color: #FFFFFF;
-    }
-
-    .admin-nav-tabs {
-      display: flex;
-      background: #FDFBF8;
-      border-bottom: 1px solid var(--border-color);
-      padding: 0 30px;
-      gap: 20px;
-    }
-
-    .admin-tab {
-      padding: 16px 8px;
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--text-muted);
-      border-bottom: 3px solid transparent;
-      background: transparent;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      transition: var(--transition);
-    }
-
-    .admin-tab.active {
-      color: var(--rose-brown);
-      border-bottom-color: var(--rose-brown);
-    }
-
-    .admin-body {
-      padding: 30px;
-      overflow-y: auto;
-      flex-grow: 1;
-      background-color: #FAF7F4;
-    }
-
-    .tab-content {
-      display: none;
-    }
-
-    .tab-cont
+    atualizarCaixa();
+  </script>
+</body>
+</html>
